@@ -5,6 +5,12 @@ terraform {
       version = "4.34.0"
     }
   }
+  backend "azurerm" {
+    resource_resource_group_name = "hasib-rg"           
+    storage_account_name = "hasib-storage"                                 
+    container_name       = "tfstate"                                  
+    key                  = "prod.terraform.tfstate"                   
+  }
 }
 provider "azurerm" {
   features {}
